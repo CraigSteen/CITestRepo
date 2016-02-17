@@ -1,0 +1,111 @@
+<apex:page id="page_id" controller="CCR_CLAM.AccountMergeController">
+  <apex:form id="form_id">
+      <apex:pageBlock id="pageBlock_id" title="Account Merge">
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Merge" action="{!MergeAccount}" />              
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection columns="2">
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Name:" />
+                  <apex:inputField value="{!ClamObject1.CCR_CLAM__AccountID__c}">
+                      <apex:actionSupport event="onchange" action="{!GetAccount1}" />
+                  </apex:inputField>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Name:" />
+                  <apex:inputField value="{!ClamObject2.CCR_CLAM__AccountID__c}">
+                      <apex:actionSupport event="onchange" action="{!GetAccount2}" />
+                  </apex:inputField>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Account Number:" />
+                  <apex:outputText value="{!Number1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Account Number:" />
+                  <apex:outputLabel value="{!Number2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Description:" />
+                  <apex:outputText value="{!Description1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Description:" />
+                  <apex:outputLabel value="{!Description2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Annual Revenue:" />
+                  <apex:outputText value="{!Revenue1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Annual Revenue:" />
+                  <apex:outputLabel value="{!Revenue2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing Street:" />
+                  <apex:outputText value="{!Street1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing Street:" />
+                  <apex:outputLabel value="{!Street2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing City:" />
+                  <apex:outputText value="{!City1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing City:" />
+                  <apex:outputLabel value="{!City2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing Postcode:" />
+                  <apex:outputText value="{!Postcode1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Billing Postcode:" />
+                  <apex:outputLabel value="{!Postcode2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Phone:" />
+                  <apex:outputText value="{!Phone1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Phone:" />
+                  <apex:outputText value="{!Phone2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Website:" />
+                  <apex:outputText value="{!Website1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Website:" />
+                  <apex:outputText value="{!Website2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Type:" />
+                  <apex:outputText value="{!Type1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Type:" />
+                  <apex:outputText value="{!Type2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Master:" />
+                  <apex:inputCheckbox value="{!isAccount1Master}" >
+                      <apex:actionSupport event="onchange" action="{!ChangeMasterTo2}" />
+                  </apex:inputCheckbox>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Master:" />                  
+                  <apex:inputCheckbox value="{!isAccount2Master}">
+                      <apex:actionSupport event="onchange" action="{!ChangeMasterTo1}" />                  
+                  </apex:inputCheckbox>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:inputHidden />
+                  <apex:outputText value="{!Info}" />
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

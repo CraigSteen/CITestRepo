@@ -1,0 +1,6 @@
+<apex:page controller="CanvasDemoController">
+  <!-- Begin Default Content REMOVE THIS -->   
+  This is your new Page
+  <apex:canvasApp applicationName="CraigSample" canvasId="Id1" scrolling="true" />
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

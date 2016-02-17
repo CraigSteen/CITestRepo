@@ -1,0 +1,111 @@
+<apex:page id="page_id" controller="CCR_CLAM.LeadMergeController">
+  <apex:form id="form_id">
+      <apex:pageBlock id="pageBlock_id" title="Lead Merge">
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Merge" action="{!MergeLead}" />              
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection columns="2">
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Name:" />
+                  <apex:inputField value="{!ClamObject1.CCR_CLAM__LeadID__c}">
+                      <apex:actionSupport event="onchange" action="{!GetLead1}" />
+                  </apex:inputField>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Name:" />
+                  <apex:inputField value="{!ClamObject2.CCR_CLAM__LeadID__c}">
+                      <apex:actionSupport event="onchange" action="{!GetLead2}" />
+                  </apex:inputField>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Title:" />
+                  <apex:outputText value="{!Title1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Title:" />
+                  <apex:outputLabel value="{!Title2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="First Name:" />
+                  <apex:outputText value="{!FirstName1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="First Name:" />
+                  <apex:outputLabel value="{!FirstName2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Last Name:" />
+                  <apex:outputText value="{!LastName1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Last Name:" />
+                  <apex:outputLabel value="{!LastName2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Company:" />
+                  <apex:outputText value="{!Company1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Company:" />
+                  <apex:outputLabel value="{!Company2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Street:" />
+                  <apex:outputText value="{!Street1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Street:" />
+                  <apex:outputLabel value="{!Street2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="City:" />
+                  <apex:outputText value="{!City1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="City:" />
+                  <apex:outputLabel value="{!City2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Postcode:" />
+                  <apex:outputText value="{!Postcode1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Postcode:" />
+                  <apex:outputLabel value="{!Postcode2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Phone:" />
+                  <apex:outputText value="{!Phone1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Phone:" />
+                  <apex:outputText value="{!Phone2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Email:" />
+                  <apex:outputText value="{!Email1}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Email:" />
+                  <apex:outputText value="{!Email2}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Master:" />
+                  <apex:inputCheckbox value="{!isLead1Master}" >
+                      <apex:actionSupport event="onchange" action="{!ChangeMasterTo2}" />
+                  </apex:inputCheckbox>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Master:" />
+                  <apex:inputCheckbox value="{!isLead2Master}">
+                      <apex:actionSupport event="onchange" action="{!ChangeMasterTo1}" />
+                  </apex:inputCheckbox>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:inputHidden />
+                  <apex:outputText value="{!Info}" />
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

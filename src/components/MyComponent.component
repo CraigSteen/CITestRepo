@@ -1,0 +1,7 @@
+<apex:component controller="MyController">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <apex:repeat value="{!Stuff}" var="x">
+      <apex:inputText value="{!x.Name}"/>
+  </apex:repeat>
+</apex:component>

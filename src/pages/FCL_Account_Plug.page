@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+
+    <iframe src="http://www.flagshipcomputing.com" height="300" width="100%" />
+    
+</apex:page>

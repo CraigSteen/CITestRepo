@@ -1,0 +1,26 @@
+<apex:page controller="MyController">
+
+  <h1>Test Page</h1>
+ 
+   <apex:form >  
+   <apex:actionRegion >
+       <apex:pageBlock id="theBlock">
+        
+            <apex:commandButton value="CLICK ME" action="{!DoIt}" immediate="true" reRender="theBlock" />
+            <b>{!MyData}</b>
+
+       </apex:pageBlock>
+   </apex:actionRegion>
+   
+   <apex:pageBlock id="theOtherBlock">
+   <apex:commandButton value="CLICK ME WITHOUT IMMEDIATE" action="{!DoIt}"  />
+       <p>Mandatory Field* : <apex:inputText id="foo" required="true" />   </p>
+       <p>    <apex:messages /> </p>
+       
+       <apex:repeat value="{!Stuff}" var="x" rendered="true">
+          Opportunity: <apex:inputText value="{!x.Name}"/ required="true"> <br />
+      </apex:repeat>
+   </apex:pageBlock>
+
+     </apex:form>
+</apex:page>
